@@ -13,10 +13,10 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getData', () => {
-    it('should return "Welcome to api!"', () => {
+  describe('getAllGames', () => {
+    it('should return game count of 3', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({ message: 'Welcome to api!' });
+      expect(appController.getAllGames().length).toEqual(3);
     });
   });
 });
