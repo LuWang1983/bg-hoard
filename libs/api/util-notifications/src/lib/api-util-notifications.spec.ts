@@ -1,7 +1,9 @@
-import { apiUtilNotifications } from './api-util-notifications';
+import { sendNotification } from './api-util-notifications';
 
-describe('apiUtilNotifications', () => {
+describe('sendNotification', () => {
   it('should work', () => {
-    expect(apiUtilNotifications()).toEqual('api-util-notifications');
+    expect(sendNotification('test')).toEqual(
+      'sending notification to client: test'
+    );
   });
 });
