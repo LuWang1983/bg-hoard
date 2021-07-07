@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,12 @@ import { RouterModule } from '@angular/router';
       { initialNavigation: 'enabledBlocking' }
     ),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'baseUrl',
+      useValue: environment.apiUrl,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

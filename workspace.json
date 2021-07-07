@@ -25,6 +25,14 @@
                   "replace": "apps/api/src/environments/environment.ts",
                   "with": "apps/api/src/environments/environment.prod.ts"
                 }
+              ],
+              "externalDependencies": [
+                "@nestjs/microservices",
+                "@nestjs/microservices/microservices-module",
+                "@nestjs/websockets/socket-module",
+                "class-transformer",
+                "class-validator",
+                "cache-manager"
               ]
             }
           }
@@ -47,6 +55,20 @@
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "cp ../../../apps/api/Dockerfile .",
+              "heroku container:login",
+              "heroku container:push web -a nx-workshop-api",
+              "heroku container:release web -a nx-workshop-api"
+            ],
+            "cwd": "dist/apps/api",
+            "parallel": false
           }
         }
       }
@@ -78,6 +100,13 @@
       "sourceRoot": "apps/store/src",
       "prefix": "bg-hoard",
       "targets": {
+        "deploy": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "yarn surge dist/apps/store ${SURGE_DOMAIN_STORE} --token ${SURGE_TOKEN}"
+          }
+        },
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
