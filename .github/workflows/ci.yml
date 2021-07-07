@@ -33,13 +33,13 @@ lint:
     - uses: bahmutov/npm-install@v1.4.5
     - run: npm run nx affected -- --targe=lint --base=origin/master --parallel
 
-e2e:
-  runs-on: ubuntu-latest
-  name: E2E
-  steps:
-    - uses: actions/checkout@v1
-    - uses: bahmutov/npm-install@v1.4.5
-    - run: npm run nx affected -- --targe=e2e --base=origin/master --parallel
+# e2e:
+#   runs-on: ubuntu-latest
+#   name: E2E
+#   steps:
+#     - uses: actions/checkout@v1
+#     - uses: bahmutov/npm-install@v1.4.5
+#     - run: npm run nx affected -- --targe=e2e --base=origin/master --parallel
 
 build:
   runs-on: ubuntu-latest
