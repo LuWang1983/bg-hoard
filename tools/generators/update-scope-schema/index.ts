@@ -25,6 +25,7 @@ export default async function (host: Tree) {
   await formatFiles(host);
 }
 
+// bonus for lab 14
 async function addMissingScope(host: Tree) {
   await updateJson<NxJsonConfiguration>(host, 'nx.json', (json) => {
     Object.keys(json.projects).forEach((projectName) => {
