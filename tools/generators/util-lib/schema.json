@@ -12,5 +12,27 @@
       }
     }
   },
+  "directory": {
+    "type": "string",
+    "description": "The scope of the library",
+    "x-prompt": {
+      "message": "Which directory would you like to generate to?",
+      "type": "list",
+      "items": [
+        {
+          "value": "store",
+          "label": "store"
+        },
+        {
+          "value": "api",
+          "label": "api"
+        },
+        {
+          "value": "shared",
+          "label": "shared"
+        }
+      ]
+    }
+  },
   "required": ["name"]
 }
