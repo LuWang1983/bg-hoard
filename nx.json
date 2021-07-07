@@ -9,7 +9,7 @@
       "devDependencies": "*"
     },
     ".eslintrc.json": "*",
-    "globalFile": "*"
+    ".github/workflows/ci.yml": "*"
   },
   "tasksRunnerOptions": {
     "default": {
