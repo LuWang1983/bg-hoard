@@ -34,33 +34,33 @@
   },
   "projects": {
     "api": {
-      "tags": ["scope:api", "type:app"]
+      "tags": ["scope:api", "type:app", "scope:new", "scope:api"]
     },
     "api-util-notifications": {
-      "tags": ["type:util", "scope:api"]
+      "tags": ["type:util", "scope:api", "scope:api"]
     },
     "store": {
-      "tags": ["scope:store", "type:app"]
+      "tags": ["scope:store", "type:app", "scope:store"]
     },
     "store-e2e": {
-      "tags": ["scope:store", "type:e2e"],
+      "tags": ["scope:store", "type:e2e", "scope:store"],
       "implicitDependencies": ["store"]
     },
     "store-feature-game-detail": {
-      "tags": ["scope:store", "type:feature"]
+      "tags": ["scope:store", "type:feature", "scope:store"]
     },
     "store-ui-shared": {
-      "tags": ["scope:store", "type:ui"]
+      "tags": ["scope:store", "type:ui", "scope:store"]
     },
     "store-ui-shared-e2e": {
-      "tags": ["scope:store", "type:e2e"],
+      "tags": ["scope:store", "type:e2e", "scope:store"],
       "implicitDependencies": ["store-ui-shared"]
     },
     "store-util-formatters": {
-      "tags": ["scope:store", "type:util"]
+      "tags": ["scope:store", "type:util", "scope:store"]
     },
     "util-interface": {
-      "tags": ["scope:shared", "type:util"]
+      "tags": ["scope:shared", "type:util", "scope:util"]
     }
   }
 }
